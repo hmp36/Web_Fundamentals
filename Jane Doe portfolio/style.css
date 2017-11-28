@@ -1,0 +1,45 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 1000px;
+ background-color:#6F5964;
+ margin: 0px;
+}
+#header{
+ height: 250px;
+ width: 1000px;
+ background-color: #EAE2EA;
+ margin: 0px;
+ padding-right: 0px;
+ display:inline-block;
+ }
+.subcontents{
+ height: 400px;
+ width: 300px;
+ background-color: #92919C;
+ display:inline-block;
+ margin: 10px;
+ margin-left: 0px;
+ position: relative;
+ /* position:fixed; */
+}
+#profile_photo{
+    height:250px;
+    width:350px; 
+}
+#lamode{
+    height: 200px;
+    width: 300px;
+}
+#familyContacts{
+    height: 200px;
+    width: 300px;
+}
+#FiveEleven{
+    height: 200px;
+    width: 300px;
+}
+

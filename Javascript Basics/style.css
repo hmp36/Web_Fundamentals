@@ -1,0 +1,62 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+ font-size: 12px; }
+
+ #wrapper{
+ width: 1000px;
+ background-color:#1C345D;
+ margin: 0px;
+}
+#header{
+ height: 30px;
+ background-color: #CF3036;
+ margin: 5px;
+ font-size: 24px;
+ color:white;
+ border-radius: 10px
+ }
+#navigation{
+ height: 250px;
+ width: 150px;
+ background-color:#2A7D8C;
+ margin: 10px;
+ display:inline-block;
+ vertical-align:top;
+ padding: 30px;
+ color:white;
+ border-radius: 10px
+}
+#main_content{
+ height: 400px;
+ width: 680px;
+ background-color:#0E1822;
+ display:inline-block;
+ vertical-align:top;
+ margin: 0px;
+ color:white;
+ padding: 30px;
+ border-radius: 10px
+ }
+ #blue{
+     color: blue;
+ }
+#footer{
+ height: 10px;
+ background-color: #5D6573;
+ margin: 0px;
+ padding: 20px;
+ color:white;
+ border-radius: 10px
+}
+a{
+    color:#64D5DB;
+}
+p{
+    color:white;
+}
+
+.Content_Title{
+    font-size: 25pt;
+}

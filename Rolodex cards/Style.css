@@ -1,0 +1,18 @@
+style.css
+
+.card {
+    height: 260px;
+    width: 360px;
+    border: 1px solid black;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.hidden {
+    display: none;
+}
+
+.displayed {
+    display: block;
+}
