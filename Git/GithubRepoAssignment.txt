@@ -1,0 +1,18 @@
+In GitHub account created a new repo named DojoAssignments
+The following commands were done in terminal:
+
+$ cd Desktop/
+$ cd DojoAssignments/
+$ git init
+$ git status
+$ git add .
+$ git commit -m "Initial Commit"
+$ git status
+$ git remote add origin https://github.com/jbenammi/DojoAssignments.git
+$ git push -u origin master
+$ touch readme.md
+$ atom . (Opened text editor and edited the readme.md)
+$ git status
+$ git add readme.md
+$ git commit -m "Added a readme file explaining the purpose of the repo"
+$ git push
