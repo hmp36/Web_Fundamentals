@@ -1,0 +1,196 @@
+CSS reset settings here
+*{
+ /* margin: auto; */
+ /* padding: auto; */
+}
+#wrapper{
+ width: 1000px;
+ height: 600px;
+ background-color:white;
+ margin: 0px;
+ }
+#header{
+ height: 70px;
+ width: 1000px;
+ background-color:#ECECEC;
+ margin: 5px;
+ padding: 5px;
+}
+#main_content{
+ height: 500px;
+ width: 1000px;
+ background-color:#414141;
+ display:inline-block;
+ vertical-align:top;
+ margin: 0px;
+ color:white;
+}
+.subcontents{
+ height: 425px;
+ width: 230px;
+ background-color: #F2F2F2;
+ display: inline-block;
+ margin: 0px;
+ margin-left: 0px;
+}
+#browse{
+ height: 75px;
+ width: 1000px;
+ background-color:#F2F2F2;
+ margin: 0px;
+ padding: 0px;
+}
+#accordance{
+    height: 450px;
+    width: 1000px; 
+}
+#menuicon{
+    height: 70px;
+    width:  70px; 
+}
+#videopreview{
+    height:35px;
+    width: 35px;
+}
+#Tourof10{
+    height: 35px;
+    width: 35px;
+}
+#FreeTrial{
+    height:35px;
+    width: 35px;
+}
+#ReadytoBuy{
+    height:35px;
+    width: 35px;
+}
+#videopre{
+    height:175px;
+    width: 225px;
+}
+#tour{
+    height:175px;
+    width: 225px;
+}
+#trial{
+    height:175px;
+    width: 225px;
+}
+#find{
+    height:175px;
+    width: 225px;
+}
+
+#browse button{
+    background:    #3d85c6;
+    background:    -webkit-linear-gradient(#3d85c6, #073763);
+    background:    linear-gradient(#3d85c6, #073763);
+    border-radius: 2px;
+    padding:       100px 0px 0px 100px;
+    color:         #ffffff;
+    /* display:       inline-block; */
+    font:          normal 700 24px/1 "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #ffffff;
+    
+}
+#watchnowbutton{
+    background:    #3d85c6;
+    border-radius: 1px;
+    width:         230px;
+    height:        35px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 25px/25px "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #5cade9;   
+}
+#tourbutton{
+    background:    #3d85c6;
+    border-radius: 1px;
+    width:         230px;
+    height:        35px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 25px/50px "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #5cade9;   
+}
+#trialbutton{
+    background:    #3d85c6;
+    border-radius: 1px;
+    width:         230px;
+    height:        35px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 25px/50px "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #5cade9;   
+}
+#findbutton{
+    background:    #3d85c6;
+    border-radius: 1px;
+    width:         230px;
+    height:        35px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 25px/50px "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #5cade9;   
+}
+#footer{
+    height: 200px;
+    width: 1000px;
+    background-color:#ECECEC;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+}
+#bottombox1{
+    height: 300px;
+    width: 150px;
+    background-color: #FCFEFD;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 0px;
+}
+#bottombox2{
+    height: 300px;
+    width: 150px;
+    background-color:#FCFEFD;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 0px;
+}
+#bottombox3{
+    height: 300px;
+    width: 150px;
+    background-color:#FCFEFD;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 0px;
+}
+#bottombox4{
+    height: 300px;
+    width: 150px;
+    background-color:#FCFEFD;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 0px;
+}
+#bottombox5{
+    height: 300px;
+    width: 150px;
+    background-color:#FCFEFD;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 0px;
+}
+#bottombox6{
+    height: 300px;
+    width: 150px;
+    background-color:#FCFEFD;
+    display: inline-block;
+    margin: 0px;
+    margin-left: 0px;
+}
