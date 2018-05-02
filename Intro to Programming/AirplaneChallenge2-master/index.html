@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <title>Airplane Challenge 2</title>
+    </head>
+    <body>
+        <style>
+            #ocean {
+                position: relative;
+                width: 900px;
+                height: 700px;
+                background: black;
+                overflow: hidden;
+            }
+            .player {
+                position: absolute;
+                width: 70px;
+                height: 75px;
+            }
+            .enemy {
+                position: absolute;
+                width: 70px;
+                height: 75px;
+            }
+            .space-invader {
+                width: 70px;
+                height: 75px;
+            }
+            .space-ship {
+                width: 70px;
+                height: 75px;
+            }
+            .missile {
+                position: absolute;
+                width: 3px;
+                height: 10px;
+                background-color: greenyellow;
+            }
+        </style>
+        
+        <div id="ocean">
+                <div id="players">
+                    <div class="player"><image class="space-ship" src="res/ss.jpg"></image></div>
+                </div>
+                <div id="enemies">
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                </div>
+                <div id="missiles">
+                </div>
+        </div>
+        <script>
+            var player = {
+                left: 450,
+                top: 620
+            };
+
+            var playerElem = document.getElementsByClassName("player")[0];
+            var enemyElems = document.getElementsByClassName("enemy");
+            var missilesDiv = document.getElementById("missiles");
+            var ocean = document.getElementById("ocean");
+            var plane = document.getElementsByClassName("player")[0];
+
+            function drawPlayer() {
+                playerElem.style.left = player.left;
+                playerElem.style.top = player.top;
+            }
+
+            drawPlayer();
+
+            var enemies = [
+                { top: 250, left: 100 },
+                { top: 250, left: 170 },
+                { top: 250, left: 240 },
+                { top: 250, left: 310 },
+                { top: 250, left: 380 },
+                { top: 250, left: 450 }
+            ];
+
+            function drawEnemies() {
+                for (var i = 0; i < enemyElems.length; ++i) {
+                    enemyElems[i].style.left = enemies[i].left;
+                    enemyElems[i].style.top = enemies[i].top;
+                }
+            }
+
+            function moveEnemies() {
+                for (var enemy of enemies) {
+                    if (enemy.top < ocean.offsetTop + ocean.offsetHeight)
+                        enemy.top += 5;
+                }
+            }
+
+            drawEnemies();
+
+            var missiles = [];
+
+            function drawMissiles() {
+                while(missilesDiv.firstChild) missilesDiv.removeChild(missilesDiv.firstChild);
+                for (var missile of missiles) {
+                    var newMissile = document.createElement("div");
+                    newMissile.classList.add("missile");
+                    newMissile.style.top = missile.top;
+                    newMissile.style.left = missile.left;
+                    missilesDiv.appendChild(newMissile);
+                }
+            }
+
+            const missileHeight = 10;
+
+            function moveMissiles() {
+                for (var missile of missiles) {
+                    if (missile.top > -1 * missileHeight) {
+                        missile.top -= 7;
+                    }
+                }
+            }
+
+            var planeLeftLowerLimit = ocean.offsetLeft;
+            var planeLeftUpperLimit = ocean.offsetLeft + ocean.offsetWidth - plane.offsetWidth;
+            var planeTopLowerLimit = ocean.offsetTop + (ocean.offsetHeight - (ocean.offsetHeight / 3));
+            var planeTopUpperLimit = ocean.offsetTop + ocean.offsetHeight - plane.offsetHeight;
+
+            document.onkeydown = function (e) {
+                if (e.keyCode == 37) {
+                    player.left = player.left - 10 > planeLeftLowerLimit ? player.left - 10 : planeLeftLowerLimit;
+                } else if (e.keyCode == 38) {
+                    player.top = player.top - 10 > planeTopLowerLimit ? player.top - 10 : planeTopLowerLimit;
+                } else if (e.keyCode == 39) {
+                    player.left = player.left + 10 < planeLeftUpperLimit ? player.left + 10 : planeLeftUpperLimit;
+                } else if (e.keyCode == 40) {
+                    player.top = player.top + 10 < planeTopUpperLimit ? player.top + 10 : planeTopUpperLimit;
+                } else if (e.keyCode == 32) {
+                    missiles.push({ left: player.left + plane.offsetWidth / 2 - 1, top: player.top })
+                    drawMissiles();
+                }
+                drawPlayer();
+            }
+            
+            function gameLoop() {
+                moveEnemies();
+                moveMissiles();
+
+                drawPlayer();
+                drawEnemies();
+                drawMissiles();
+                setTimeout(gameLoop, 100);
+            }
+            gameLoop();
+
+        </script>
+    </body>
+</html>

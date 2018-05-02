@@ -1,0 +1,45 @@
+<!-- 092817 bcmendoza@gmail.com -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>Weather</title>
+    <link rel=stylesheet href=weather.css>
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+    <script>
+        $(document).ready(function () {
+            $('body').ready(function () {
+                $('#weather').hide()
+            });
+            $('form').submit(function () {
+                $('#weather').fadeIn();
+                var location = $('input[name="location"]').val();
+                $.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&&appid=f317df4f2298c3c9ee93062e360a6d14`,
+                    function (response) {
+                        var temp = Math.floor((response.main['temp'] * 9 / 5) - 459.67);
+                        var info = "";
+                        info += `<p>The current weather in</p>`;
+                        info += `<p>${response['name']} is</p>`;
+                        info += `<p id=huge>${temp}°F</p>`;
+                        $('#weather').html(info)
+                    }, 'json');
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id=form>
+        <p>Enter location (i.e. Tysons, VA) and press 'Submit' to view current weather information: </p>
+        <form>
+            <input type=text name=location>
+            <button id="submit">Submit</button>
+        </form>
+    </div>
+    <div id=weather></div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Airplane Challenge 1</title>
+    </head>
+    <body>
+        <style>
+            #ocean {
+                width: 900px;
+                height: 700px;
+                background: black;
+            }
+            .player {
+                position: absolute;
+                width: 70px;
+                height: 75px;
+            }
+            .enemy {
+                position: absolute;
+                width: 70px;
+                height: 75px;
+            }
+            .space-invader {
+                width: 70px;
+                height: 75px;
+            }
+            .space-ship {
+                width: 70px;
+                height: 75px;
+            }
+        </style>
+        
+        <div id="ocean">
+                <div id="players">
+                    <div class="player"><image class="space-ship" src="res/ss.jpg"></image></div>
+                </div>
+                <div id="enemies">
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                    <div class="enemy"><image class="space-invader" src="res/si.png"></image></div>
+                </div>
+        </div>
+        <script>
+            var player = {
+                left: 450,
+                top: 620
+            };
+
+            var playerElem = document.getElementsByClassName("player")[0];
+
+            function drawPlayer() {
+                playerElem.style.left = player.left;
+                playerElem.style.top = player.top;
+            }
+
+            drawPlayer();
+
+            var enemies = [
+                { top: 250, left: 100 },
+                { top: 250, left: 170 },
+                { top: 250, left: 240 },
+                { top: 250, left: 310 },
+                { top: 250, left: 380 },
+                { top: 250, left: 450 }
+            ];
+
+            var enemyElems = document.getElementsByClassName("enemy");
+
+            function drawEnemies() {
+                for (var i = 0; i < enemyElems.length; ++i) {
+                    enemyElems[i].style.left = enemies[i].left;
+                    enemyElems[i].style.top = enemies[i].top;
+                }
+            }
+
+            drawEnemies();
+
+            var ocean = document.getElementById("ocean");
+            var plane = document.getElementsByClassName("player")[0];
+            var planeLeftLowerLimit = ocean.offsetLeft;
+            var planeLeftUpperLimit = ocean.offsetLeft + ocean.offsetWidth - plane.offsetWidth;
+            var planeTopLowerLimit = ocean.offsetTop + (ocean.offsetHeight - (ocean.offsetHeight / 3));
+            var planeTopUpperLimit = ocean.offsetTop + ocean.offsetHeight - plane.offsetHeight;
+
+            document.onkeydown = function (e) {
+                if (e.keyCode == 37) {
+                    player.left = player.left - 10 > planeLeftLowerLimit ? player.left - 10 : planeLeftLowerLimit;
+                } else if (e.keyCode == 38) {
+                    player.top = player.top - 10 > planeTopLowerLimit ? player.top - 10 : planeTopLowerLimit;
+                } else if (e.keyCode == 39) {
+                    player.left = player.left + 10 < planeLeftUpperLimit ? player.left + 10 : planeLeftUpperLimit;
+                } else if (e.keyCode == 40) {
+                    player.top = player.top + 10 < planeTopUpperLimit ? player.top + 10 : planeTopUpperLimit;
+                }
+                drawPlayer();
+            }
+            
+        </script>
+    </body>
+</html>

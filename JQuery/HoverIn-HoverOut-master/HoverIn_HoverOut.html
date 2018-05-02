@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hover In Hover Out</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('img').hover(function(){
+                var temp1 = $(this).attr("data-alt-src");
+                var temp2 = $(this).attr("src");
+                $(this).attr('src', temp1);
+                $(this).attr('data-alt-src', temp2);
+            })
+        })
+    </script>
+    <style>
+        .wrapper{
+            margin: 0 auto;
+            padding: 10px;
+            width: 550px;
+            height: 500px;
+        }
+        h1, h3{
+            text-align: center;
+        }
+        img{
+            width: 120px;
+            height: 150px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover In Hover Out jQuery Assignment</h1>
+    <h3>Turn the Ninja Around</h3>
+    <div class="wrapper">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+        <img src="img/top1.png" data-alt-src="img/down1.png">
+    </div>
+</body>
+</html>

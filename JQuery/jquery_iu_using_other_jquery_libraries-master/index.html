@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <title>Using other jQuery Libraries</title>
+        <link rel="stylesheet" type="text/css" href="css/arctext.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="css/powertip/jquery.powertip.css" />
+
+        <style>
+
+        	body {
+        		background: #95AB9D url(images/texture.png) repeat top left;
+        	}
+
+        	.box {
+        		width: 700px;
+        		height: 700px;
+        		position: absolute;
+        		top: 50px;
+        		left: 200px;
+        		
+        		margin: 2rem;
+        	}
+
+        	h1 {
+        		text-align: center;
+        		position: relative;
+        		top: -15px;
+        	}
+
+        	#second {
+        		transform: rotate(180deg);
+        		top: 575px;
+        	}
+
+        	@keyframes spin {
+			    from {transform: rotate(0deg);}
+			    to {transform: rotate(360deg);}
+			}
+
+			.spin {
+				animation-name: spin;
+				animation-duration: 15s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+        </style>
+
+    </head>
+    <body>
+    	
+    	<div class="box" id="box">
+    		<h1 id="first">I wonder how we could make this into a circle.</h1>
+    		<h1 id="second">I wonder how we could make this into a circle.</h2>
+    	</div>
+
+
+
+
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery.arctext.js"></script>
+		<script type="text/javascript" src="js/jquery.powertip.min.js"></script>
+		
+		<script>
+			// draws the arc text
+			$('#first').arctext({radius: 0});
+			$('#second').arctext({radius: 0});
+			$('#box').draggable();
+			$('#box').powerTip({
+				placement: 'n'
+			});
+			$('#box').data('powertip', 'Click inside the circle to start the spin. Then try dragging it around.');
+			// spins and stops the circle on click
+			$('#box').mousedown(function() {
+				if(!$('#box').hasClass('spin')) {
+					$('#box').addClass('spin');
+				} else if ($('#box').hasClass('spin')) {
+					$('#box').removeClass('spin');
+				}
+				
+			});
+		</script>
+    </body>
+</html>
