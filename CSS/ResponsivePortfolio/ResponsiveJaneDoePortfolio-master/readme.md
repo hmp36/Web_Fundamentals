@@ -1,0 +1,1 @@
+Responsive web educational assignment at Coding Dojo
