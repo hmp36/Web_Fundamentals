@@ -1,0 +1,77 @@
+* {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#background {
+    width: 900px;
+    background-color: #EEEEEE;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+#table1 {
+    display: grid;
+    grid-template-columns: repeat(3, 45px) 10px repeat(16, 45px);
+    grid-template-rows: repeat(8, 45px);
+    grid-gap: 2px;
+    grid-template-areas: "t t t . t t t t t t t t t t t t t t t t" "t b . . . . . . . . . . . . . . . . . o" "t b b . . . . . . . . . . . o o o o o o" "t b b . . . . . . . . . . . o o o o o o" "t b b . r r r r r r r r r r o o o o o o" "t b b . r r r r r r r r r r o o o o o o" "t b b . r r r r r r r r r r o o o o o o" "t b b . r r r r r r r r r r o o o o o o";
+}
+
+.t {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 7pt;
+    color: red;
+    padding-left: 5px;
+    padding-top: 18px;
+}
+
+.b {
+    font-family: Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #000000;
+    background-color: #689BFF;
+    padding: 18px;
+}
+
+.o {
+    font-family: Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #000000;
+    background-color: #FECB00;
+    padding: 18px;
+}
+
+.r {
+    font-family: Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #000000;
+    background-color: #FD9A98;
+    padding: 18px;
+}
+
+.g {
+    font-family: Helvetica, sans-serif;
+    font-size: 7pt;
+    color: #000000;
+    background-color: #73CE74;
+    padding: 18px;
+}
+
+#table2 {
+    display: grid;
+    grid-template-columns: 100px 10px repeat(14, 45px);
+    grid-template-rows: 45px 45px;
+    grid-gap: 2px;
+    grid-template-areas: "t g g g g g g g g g g g g g g" "t g g g g g g g g g g g g g g";
+    margin-top: 20px;
+    margin-left: 40px;
+}
