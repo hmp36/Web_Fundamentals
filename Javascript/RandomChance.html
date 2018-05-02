@@ -1,0 +1,69 @@
+<!DOCKTYPE html>
+<html>
+
+<head>
+    <title>Coding Dojo | Random Chance</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Random Chance | Exercise</h1>
+
+    <p>Let's play the slots!</p>
+
+    <p>Make a function that takes a number of quarters (1 quarter = 1 game).</p>
+
+    <p>There is a 1 in 100 chance to win the slot machine (which will give you between 50 - 100 quarters -- use Math.random
+        and Math.floor to pick a random number of coins).</p>
+
+    <p>While the user still has quarters, use Math.random to determine if they won.</p>
+
+    <p>If they ever win, return the number of quarters (ex: they had 50 remaining quarters and won 90, so it should return 140).</p>
+
+    <p>Return 0 if all the quarters were wasted.</p>
+
+    <p> ==================================================== </p>
+    <p> Your quarter game start with 10 quarters </p>
+    <p> ctrl + shift + i to go to console </p>
+    <form action="#" method="post">
+        Please enter amount of quarters:
+
+        <input type="text" id="coinInput" name="coinIn">
+        <input onclick="pullLever()" type="button" value="Click Me">
+    </form>
+    <p> ==================================================== </p>
+
+    <script>
+        var startQuarter = 10;
+        window.pullLever = function () {
+            quarterAmount = document.getElementById('coinInput').value;
+            /* To check if player have enough or any quarter left */
+            enoughQuarter = startQuarter - quarterAmount;
+            /* If they do run the if function , if not go to else */
+            if (enoughQuarter > 0) {
+                var winningNumber = Math.floor(Math.random() * 100);
+                var leverPullNumber = Math.floor(Math.random() * 100);
+                var winningBet = Math.trunc(Math.random() * 50) + 51;
+                console.log(winningNumber);
+                console.log(leverPullNumber);
+                console.log(winningBet);
+                if (winningNumber == leverPullNumber) {
+                    console.log("YOU WIN");
+                    startQuarter = startQuarter + (quarterAmount * winningBet);
+                    console.log("You have " + startQuarter + " Quarters");
+                }
+                else {
+                    console.log("Sorry try again");
+                    startQuarter = startQuarter - quarterAmount;
+                    console.log("You have " + startQuarter + " Quarters Left");
+                }
+            }
+            else {
+                console.log("Sorry you dont have any or enough quarters.");
+            }
+        } //end of pull lever function
+    </script>
+</body>
+
+</html>
